@@ -21,7 +21,16 @@ def menu():
             for movie in movies:
                 print(movie['name'])
         elif choice == '2':
-            pass 
+            # Searching movies by name
+            keyword = input("Enter a keyword to search for in movie names: ")
+            matching_movies = movie_object.search_by_name(keyword)
+            if matching_movies:
+                print("\nMovies matching the keyword:")
+                for movie_name in matching_movies:
+                    print(movie_name)
+            else:
+                print("No movies found with the given keyword.")
+
         elif choice == '3':
             pass  
         else:
