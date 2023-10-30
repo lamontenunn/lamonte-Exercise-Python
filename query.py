@@ -1,6 +1,11 @@
+from movies import Movies
+
+# Instantiating movie_object using the Movies class
+movie_object = Movies('./movies.txt')
+
 def menu():
     while True:
-        print("Options:")
+        print("\nOptions:")
         print("1: List all movies")
         print("2: Search movies by names")
         print("3: Search movies by cast")
@@ -8,16 +13,18 @@ def menu():
         
         choice = input("\nEnter your choice: ")
         
-        if choice == 'q' or choice == 'Q':
+        if choice == 'q':
             break
         elif choice == '1':
-            pass  # Code for listing all movies 
+            # Listing all movies
+            movies = movie_object.movies  # Accessing movies from movie_object
+            for movie in movies:
+                print(movie['name'])
         elif choice == '2':
-            pass  # Code for searching movies by names 
+            pass 
         elif choice == '3':
-            pass  # Code for searching movies by cast
+            pass  
         else:
             print("Invalid choice. Try again.")
-
 
 menu()

@@ -17,6 +17,11 @@ class Movies:
                         }
                     )
                 row_idx += 1
+                
+
+    @property
+    def movies(self):
+        return self._movies
 
 
 if __name__ == "__main__":
