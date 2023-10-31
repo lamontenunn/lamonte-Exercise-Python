@@ -19,6 +19,13 @@ class Movies:
                 row_idx += 1
                 
 
+    def search_by_name(self, keyword):
+        keyword = keyword.lower()  # Convert keyword to lowercase 
+        matching_movies = [movie['name'] for movie in self._movies if keyword in movie['name'].lower()]
+        return matching_movies
+
+                
+
     @property
     def movies(self):
         return self._movies
