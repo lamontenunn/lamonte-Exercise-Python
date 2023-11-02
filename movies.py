@@ -23,6 +23,16 @@ class Movies:
         keyword = keyword.lower()  # Convert keyword to lowercase 
         matching_movies = [movie['name'] for movie in self._movies if keyword in movie['name'].lower()]
         return matching_movies
+    
+    def search_by_cast(self, keyword):
+        keyword = keyword.lower()  # Convert keyword to lowercase for case-insensitive search
+        matching_movies = {}
+        for movie in self._movies:
+            matching_cast = [cast_member for cast_member in movie['cast'] if keyword in cast_member.lower()]
+            if matching_cast:
+                matching_movies[movie['name']] = matching_cast
+        return matching_movies
+
 
                 
 

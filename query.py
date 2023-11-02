@@ -32,7 +32,17 @@ def menu():
                 print("No movies found with the given keyword.")
 
         elif choice == '3':
-            pass  
+    # Searching movies by cast
+            keyword = input("Enter a keyword to search for in movie casts: ")
+            matching_movies = movie_object.search_by_cast(keyword)
+            if matching_movies:
+                print("\nMovies and casts matching the keyword:")
+                for movie_name, cast_members in matching_movies.items():
+                    print(movie_name)
+                    print(cast_members)
+            else:
+                print("No movies found with cast members containing the given keyword.")
+
         else:
             print("Invalid choice. Try again.")
 
